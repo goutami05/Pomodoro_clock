@@ -1,0 +1,145 @@
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+#main {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(253, 156, 222, 0.819), rgba(135, 221, 236, 0.89));
+}
+
+.logo {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 70px;
+    color: rgba(0, 0, 0, 0.816);
+    letter-spacing: 8px;
+}
+
+#theme-toggle i {
+    position: absolute;
+    top: 5%;
+    right: 6%;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+#menu-toggle i {
+    position: absolute;
+    top: 5%;
+    right: 3%;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+#countdown {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.491);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.169);
+}
+
+#minutes,
+#seconds {
+    color: #ff778d;
+    font-size: 48px;
+    font-weight: 600;
+}
+
+
+#minutes::after {
+    content: ":";
+}
+
+#controls {
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    gap: 15px;
+}
+
+#controls button {
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    border-radius: 12px;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#controls button:hover {
+    background: rgba(20, 19, 19, 0.072);
+    transform: scale(1.05);
+}
+
+#cat {
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 50px;
+    animation: catBounce 4s ease-in-out infinite;
+}
+
+@keyframes catBounce {
+
+    0%,
+    100% {
+        transform: translateX(-50%) translateY(0);
+        opacity: 1;
+    }
+
+    50% {
+        transform: translateX(-50%) translateY(-20px);
+        opacity: .5;
+    }
+}
+
+#countdown {
+    animation: rainbowGlow 7s linear infinite;
+}
+
+@keyframes rainbowGlow {
+    0% {
+        box-shadow: 0 0 20px #e49fa6;
+    }
+
+    25% {
+        box-shadow: 0 0 20px #f3d6b6;
+    }
+
+    50% {
+        box-shadow: 0 0 20px #baffc9;
+    }
+
+    75% {
+        box-shadow: 0 0 20px #bae1ff;
+    }
+
+    100% {
+        box-shadow: 0 0 20px #ffb3ba;
+    }
+}
