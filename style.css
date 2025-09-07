@@ -175,10 +175,9 @@ body.dark #controls button {
     box-shadow: none;
 }
 
-body.dark #cycles {
-    color: #eee;
-}
-
-body.dark #countdown {
+body.dark #cycles,
+body.dark #countdown,
+body.dark #theme-toggle,
+body.dark #menu-toggle {
     color: #eee;
 }
