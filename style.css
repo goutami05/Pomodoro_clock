@@ -1,6 +1,6 @@
 * {
-    margin: 0%;
-    padding: 0%;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
@@ -8,80 +8,104 @@ html,
 body {
     width: 100%;
     height: 100%;
+    font-family: "Poppins", sans-serif;
+}
+
+#main {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #fd9cde, #87ddec);
+    position: relative;
+    overflow: hidden;
 }
 
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 40px;
-    position: relative;
-}
-
-
-
-
-#main {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to right, rgba(253, 156, 222, 0.819), rgba(135, 221, 236, 0.89));
-}
-
-.logo {
     position: absolute;
-    top: 200%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 70px;
-    color: rgba(0, 0, 0, 0.816);
-    letter-spacing: 8px;
-}
-
-#theme-toggle i {
-    position: absolute;
-    top: 9%;
-    right: 6%;
-    font-size: 25px;
-    cursor: pointer;
-}
-
-#menu-toggle i {
-    position: absolute;
+    right: 5%;
     top: 5%;
-    right: 3%;
-    font-size: 25px;
+}
+
+
+#theme-toggle {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+#menu-toggle {
+    background: none;
+    border: none;
+    font-size: 24px;
     cursor: pointer;
 }
 
+/* Modes */
+#modes {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 120px;
+}
+
+#modes button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.7);
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#modes button:hover {
+    background: linear-gradient(to right, #fd9cdeaa, #87ddecaa);
+    transform: scale(1.05);
+}
+
+/* Countdown */
 #countdown {
     position: absolute;
-    top: 50%;
+    top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 250px;
     height: 250px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.491);
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 5px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.169);
-}
-
-#minutes,
-#seconds {
-    color: #ff778d;
     font-size: 48px;
     font-weight: 600;
+    background: linear-gradient(to right, #dd5cb410, #87ddec26);
+    color: #ce2b8a;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.169);
 }
-
 
 #minutes::after {
     content: ":";
 }
 
+#message {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 20px;
+    color: #333;
+    text-align: center;
+    width: 80%;
+}
+
+/* Dark mode tweak */
+body.dark #message {
+    color: #eee;
+}
+
+
+/* Controls */
 #controls {
     position: absolute;
     top: 75%;
@@ -104,13 +128,14 @@ header {
 }
 
 #controls button:hover {
-    background: linear-gradient(to right, rgba(253, 156, 222, 0.595), rgba(135, 221, 236, 0.621));
+    background: linear-gradient(to right, rgba(253, 156, 222, 0.7), rgba(135, 221, 236, 0.7));
     transform: scale(1.05);
 }
 
+/* Cat */
 #cat {
     position: absolute;
-    top: 85%;
+    bottom: 30px;
     left: 50%;
     transform: translateX(-50%);
     font-size: 50px;
@@ -127,32 +152,33 @@ header {
 
     50% {
         transform: translateX(-50%) translateY(-20px);
-        opacity: .5;
+        opacity: 0.6;
     }
 }
 
-#countdown {
-    animation: rainbowGlow 7s linear infinite;
+/* Cycle Counter */
+#cycles {
+    position: absolute;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 18px;
+    color: #333;
 }
 
-@keyframes rainbowGlow {
-    0% {
-        box-shadow: 0 0 20px #e49fa6;
-    }
+/* Dark Mode */
+body.dark #main {
+    background: linear-gradient(to right, #232526, #414345);
+}
 
-    25% {
-        box-shadow: 0 0 20px #f3d6b6;
-    }
+body.dark #controls button {
+    box-shadow: none;
+}
 
-    50% {
-        box-shadow: 0 0 20px #baffc9;
-    }
+body.dark #cycles {
+    color: #eee;
+}
 
-    75% {
-        box-shadow: 0 0 20px #bae1ff;
-    }
-
-    100% {
-        box-shadow: 0 0 20px #ffb3ba;
-    }
+body.dark #countdown {
+    color: #eee;
 }

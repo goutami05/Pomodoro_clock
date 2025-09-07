@@ -4,24 +4,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro Clock</title>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
     <link rel="stylesheet" href="style.css">
-    <title>Pomodoro Clock</title>
 </head>
 
 <body>
     <div id="main">
         <header>
-            <h1 class="logo">Pomodoro Clock</h1>
             <button id="theme-toggle"><i class="ri-sun-fill"></i></button>
             <button id="menu-toggle"><i class="ri-menu-line"></i></button>
         </header>
+
+        <!-- Mode Buttons -->
+        <section id="modes">
+            <button data-mode="work">Work</button>
+            <button data-mode="short">Short Break</button>
+            <button data-mode="long">Long Break</button>
+        </section>
+
+
+        <!-- Countdown -->
         <section>
             <div id="countdown">
-                <span id="minutes">30</span>
+                <span id="minutes">25</span>
                 <span id="seconds">00</span>
             </div>
         </section>
+        <div id="message">Ready to start your session?</div>
+
+        <!-- Controls -->
         <section>
             <div id="controls">
                 <button id="start"><i class="ri-play-fill"></i></button>
@@ -29,6 +41,11 @@
                 <button id="reset"><i class="ri-restart-line"></i></button>
             </div>
         </section>
+
+        <!-- Cycle Counter -->
+        <div id="cycles">Pomodoros: <span id="count">0</span></div>
+
+        <!-- Cat Animation -->
         <div id="cat">🐾</div>
     </div>
 
