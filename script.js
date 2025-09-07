@@ -93,7 +93,7 @@ function pauseTimer() {
     clearInterval(timer);
     clearInterval(quoteTimer);
     isRunning = false;
-    clickSound.play(); // 🔊 play on pause
+    clickSound.play();
     messageEl.textContent = "⏸️ Timer paused.";
 }
 
