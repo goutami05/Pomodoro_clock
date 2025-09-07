@@ -29,6 +29,11 @@ const quotes = [
     "🏆 Discipline beats motivation."
 ];
 
+// ------------------ Sounds ------------------
+const clickSound = new Audio("sound/414719__devern__mouse-click.wav");
+const resetSound = new Audio("sound/414719__devern__mouse-click.wav");
+const dingSound = new Audio("sound/414719__devern__mouse-click.wav");
+
 // ------------------ Functions ------------------
 function updateDisplay() {
     let mins = Math.floor(timeLeft / 60);
@@ -40,6 +45,8 @@ function updateDisplay() {
 function startTimer() {
     if (isRunning) return;
     isRunning = true;
+
+    clickSound.play(); // 🔊 play on start
 
     // Starting messages
     if (currentMode === "work") {
@@ -76,6 +83,7 @@ function startTimer() {
                 messageEl.textContent = "✨ Break over! Time to get back to work!";
             }
 
+            dingSound.play(); // 🔊 sound when time is up
             alert("⏰ Time’s up!");
         }
     }, 1000);
@@ -85,6 +93,7 @@ function pauseTimer() {
     clearInterval(timer);
     clearInterval(quoteTimer);
     isRunning = false;
+    clickSound.play(); // 🔊 play on pause
     messageEl.textContent = "⏸️ Timer paused.";
 }
 
@@ -94,6 +103,7 @@ function resetTimer() {
     isRunning = false;
     timeLeft = totalTime;
     updateDisplay();
+    resetSound.play(); // 🔊 play on reset
     messageEl.textContent = "🔄 Timer reset. Ready when you are!";
 }
 
@@ -125,6 +135,7 @@ themeToggle.addEventListener("click", () => {
     themeToggle.innerHTML = document.body.classList.contains("dark")
         ? '<i class="ri-moon-fill"></i>'
         : '<i class="ri-sun-fill"></i>';
+    clickSound.play(); // 🔊 play on theme toggle
 });
 
 // ------------------ Button Events ------------------
